@@ -32,7 +32,7 @@
 
         <v-row justify="center" class="my-16">
             <transition name="slide-fade">
-                <h1 v-show="type_completed" class="text-h1 font-weight-bold">{{title}}</h1>
+                <h1 v-show="type_completed" class="text-h2 font-weight-bold">{{title}}</h1>
             </transition>
         </v-row>
 

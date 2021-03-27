@@ -1,6 +1,7 @@
 <template>
-  <div class="works">
-    <h1 class= "text-center mt-0">Works</h1>
+  <div class="works py-15">
+    <v-container>
+    <h1 class= "text-center mt-0 py-15">Works</h1>
     
       <!-- work1 -->
     <v-dialog v-model="dialog1" max-width="85vw" >
@@ -44,27 +45,28 @@
         </v-card>
     </v-dialog>
 
-    <v-row justify="space-around" class="works">
+    <v-row justify="space-around" class="mb-15 p-15">
       <!-- work1 -->
-      <!-- 全条件でcolsを12にし、sm以上の場合に3にする（＝xsのみ12する） -->
-      <v-col cols="10" sm="3" class="mb-5 mb-sm-0"> 
+      <!-- 全条件でcolsを12にし、sm以上の場合に3にする（＝xsのみ12する） py-sm-10 はsm以上の場合のみ適用-->
+      <v-col cols="9" sm="4">
         <v-hover v-slot="{ hover }">
           <v-card
             :elevation="hover ? 12 : 2"
             :class="{ 'on-hover': hover }"
+            class="py-sm-10"
           >
-            <v-row justify="center" style="height:200px">
+            <v-row justify="center">
               <v-col cols="12">
-                <v-img src="../assets/this-site.png" height="160px" :elevation="hover ? 12 : 2" @click.stop="dialog1 = true" contain />
+                <v-img src="../assets/this-site.png" :height="$vuetify.breakpoint.smAndDown ? '160px' : '200px'" :elevation="hover ? 12 : 2" @click.stop="dialog1 = true" contain />
               </v-col>
             </v-row>
-            <p class="text-center">This site</p>
           </v-card>
         </v-hover>
+            <p class="text-center">This site</p>
       </v-col>
 
       <!-- work2 -->
-      <v-col cols="10" sm="3" class="mb-5 mb-sm-0">
+      <v-col cols="9" sm="3" class="mb-5 mb-sm-0">
         <v-hover v-slot="{ hover }">
           <v-card
             :elevation="hover ? 12 : 2"
@@ -81,7 +83,7 @@
       </v-col>
 
       <!-- work3 -->
-      <v-col cols="10" sm="3" class="mb-5 mb-sm-0">
+      <v-col cols="9" sm="3" class="mb-5 mb-sm-0">
         <v-hover v-slot="{ hover }">
           <v-card
             :elevation="hover ? 12 : 2"
@@ -97,6 +99,7 @@
         </v-hover>
       </v-col>
     </v-row>
+    </v-container>
   </div>
 </template>
 

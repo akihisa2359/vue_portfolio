@@ -42,9 +42,4 @@ export default {
   background-color: #f5f5f5;
   overflow: hidden;
 }
-.test {
-  /* position: ablosute; */
-  background: url(../assets/back.jpg) center;
-  opacity: 0.5;
-}
 </style>

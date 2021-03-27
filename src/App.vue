@@ -54,6 +54,7 @@
         <Home />
         <About />
         <Works />
+        <History />
         <button v-scroll-to="{ element: '#page2', duration: 2000 }">
           Scroll to
         </button>
@@ -80,6 +81,7 @@ import 'normalize.css'
 import Home from './views/Home'
 import About from './views/About'
 import Works from './views/Works'
+import History from './views/History'
 
 // import MoveIcon from './components/MoveIcon'
 // import FreeField from './components/FreeField'
@@ -87,7 +89,8 @@ export default {
   components: {
     About,
     Home,
-    Works
+    Works,
+    History
   //   MoveIcon,
   //   FreeField
   },
@@ -127,10 +130,5 @@ export default {
   border: 1px solid #aaa;
   background-color: #f5f5f5;
   overflow: hidden;
-}
-.test {
-  /* position: ablosute; */
-  background: url(assets/back.jpg) center;
-  opacity: 0.5;
 }
 </style>

@@ -1,6 +1,6 @@
 <template>
   <div class="about">
-    <v-parallax dark height="600" src="../assets/igor-tudoran-RJlbHMssWac-unsplash.jpg">
+    <v-parallax dark height="600" src="../assets/parker-johnson-CaMCGgfETMI-unsplash.jpg">
 
     <div class="text-center"> 
       <h1>about me</h1>

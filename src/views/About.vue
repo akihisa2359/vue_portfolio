@@ -1,6 +1,6 @@
 <template>
   <div class="about">
-    <v-parallax dark height="600" src="../assets/parker-johnson-CaMCGgfETMI-unsplash.jpg">
+    <v-parallax dark :height="windowHeight" src="../assets/autumn-studio-PaM7SD5wM6g-unsplash.jpg">
 
     <div class="text-center"> 
       <h1>about me</h1>
@@ -11,3 +11,16 @@
     </v-parallax>
   </div>
 </template>
+
+<script>
+export default {
+  data() {
+    return {
+      windowHeight: 600,
+    }
+  },
+  mounted() {
+    this.windowHeight = window.innerHeight
+  }
+}
+</script>

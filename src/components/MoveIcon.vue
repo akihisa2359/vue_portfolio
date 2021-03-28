@@ -2,7 +2,7 @@
     <!-- <div id='app'> -->
     <!-- <v-app app dark> -->
     <v-container>
-        <transition name="code-show" v-on:after-enter="endCodeShow">
+        <!-- <transition name="code-show" v-on:after-enter="endCodeShow">
         <p v-if="type_completed" class="absolute back-code">
             <pre><span class="bl">&lt;h1&gt;</span><input size="4" v-model="title" :style="input_style_obj"><span class="bl">&lt;/h1&gt;</span></pre>
             <pre><span class="bl">&lt;div class=</span>"move_icon"</pre>
@@ -34,7 +34,7 @@
             <transition name="slide-fade">
                 <h1 v-show="type_completed" class="text-h2 font-weight-bold">{{title}}</h1>
             </transition>
-        </v-row>
+        </v-row> -->
 
         <div class="move_icon absolute"
             :style="{
@@ -82,12 +82,8 @@ export default {
             x: 100,
             y: 10,
             dur: 500,
-            typing: true,
-            type_completed: false,
             flg: false,
-            tmpobj: {
-                star:true
-            },
+            type_completed: false,
             input_style_obj: {
                 transition: '1s',
                 border: 0,
@@ -98,9 +94,6 @@ export default {
         }
     },
     methods: {
-        tmpdo() {
-            this.tmpobj.star = !this.tmpobj.star
-        },
         async moveTo(x, y) {
             const lastY = this.y
             this.x = x
@@ -131,10 +124,6 @@ export default {
         },
     },
     mounted() {
-        console.log('mounted')
-        console.log(`
-        <div class=&quot;move_icon&quot;
-        :styles={</pre>`.replace(/^ {4}/, ''))
     //     new Typed("#typed", {
     //     stringsElement: "#type",
     //     startDelay: 2000,

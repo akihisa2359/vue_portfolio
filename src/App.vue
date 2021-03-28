@@ -17,7 +17,7 @@
         <v-divider></v-divider>
 
         <v-list dense nav>
-          <v-list-item v-for="nav_item in nav_list" :key="nav_item.name" :to="nav_item.link">
+          <v-list-item v-for="nav_item in nav_list" :key="nav_item.name" v-scroll-to="{ element: nav_item.scrollTo, duration: scroll_dur }">
             <v-list-item-icon>
               <v-icon>{{ nav_item.icon }}</v-icon>
             </v-list-item-icon>
@@ -38,28 +38,23 @@
       <v-toolbar-title>Vuetify</v-toolbar-title>
       <v-spacer></v-spacer>
       <v-toolbar-items class='hidden-sm-and-down'>
-        <v-btn text to="/">HOME</v-btn>
-        <v-btn text to="/about">ABOUT</v-btn>
-        <v-btn text to="/works">WORKS</v-btn>
-        <v-btn text to="/contact">CONTACT</v-btn>
+        <v-btn v-scroll-to="{ element: '#home', duration: scroll_dur }">HOME</v-btn>
+        <v-btn text v-scroll-to="{ element: '#about', duration: scroll_dur }">ABOUT</v-btn>
+        <v-btn text v-scroll-to="{ element: '#works', duration: scroll_dur }">WORKS</v-btn>
+        <v-btn text v-scroll-to="{ element: '#history', duration: scroll_dur }">HISTORY</v-btn>
       </v-toolbar-items>
     </v-app-bar>
     
-    <v-main>
+    <v-main class="main-screen">
       <!-- <v-container> -->
         <!-- <router-view /> -->
         <!-- <div class="field" @click="moveIcon">
           <MoveIcon ref="icon1" />
         </div> -->
-        <Home />
-        <About />
-        <Works />
-        <History />
-        <button v-scroll-to="{ element: '#page2', duration: 2000 }">
-          Scroll to
-        </button>
-        <div style="height: 500px"></div>
-        <h1 id="page2">Move To Here</h1>
+        <Home id="home" />
+        <About id="about" />
+        <Works id="works" />
+        <History id="history" />
         <!-- <FreeField /> -->
       <!-- </v-container> -->
     </v-main>
@@ -102,11 +97,12 @@ export default {
         'a', 'b', 'c', 'd', 'e'
       ],
       nav_list: [
-        {name: 'HOME',icon: 'mdi-vuetify', link: '/'},
-        {name: 'About',icon: 'mdi-cogs', link: '/about'},
-        {name: 'WORKS',icon: 'mdi-palette', link: '/works'},
-        {name: 'CONTACT',icon: 'mdi-view-dashboard', link: '/contact'},
-      ]
+        {name: 'HOME',icon: 'mdi-vuetify', link: '/', scrollTo: '#home'},
+        {name: 'ABOUT',icon: 'mdi-cogs', link: '/about', scrollTo: '#about'},
+        {name: 'WORKS',icon: 'mdi-palette', link: '/works', scrollTo: '#works'},
+        {name: 'HISTORY',icon: 'mdi-view-dashboard', link: '/history', scrollTo: '#history'},
+      ],
+      scroll_dur: 1000,
     }
   },
   methods: {
@@ -130,5 +126,9 @@ export default {
   border: 1px solid #aaa;
   background-color: #f5f5f5;
   overflow: hidden;
+}
+
+.main-screen {
+  background-color: #fbfbfb
 }
 </style>

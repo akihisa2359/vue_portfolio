@@ -1,6 +1,6 @@
 <template>
     <div class="history">
-         <v-parallax dark height="1500" src="../assets/simone-hutsch-gwH96RaS3KM-unsplash.jpg">
+         <v-parallax dark height="1500" src="../assets/autumn-studio-PaM7SD5wM6g-unsplash.jpg">
         <!-- スマホの文字の表示スペースを確保するためにpl-0 -->
          <v-container class="pl-0">
             <h1 class= "text-center mt-0 pt-4">History</h1>

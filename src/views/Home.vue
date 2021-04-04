@@ -10,25 +10,25 @@
         <p v-if="type_completed" class="absolute back-code">
             <pre>&lt;<span class="bl">h1</span> <span class="bl2">style</span>="<span class="bl2">color</span>: <input size="4" v-model="title_color" :style="input_style_obj">"&gt;<input size="7" v-model="title" :style="input_style_obj">&lt;<span class="bl">/h1</span>&gt;</pre>
             <pre>&lt;<span class="bl">v-row</span> <span class="bl2">justify</span>=<span class="or">"center"</span> <span class="bl2">class</span>=<span class="or">"btn_list"</span>&gt;</pre>
-            <pre>     &lt;<span class="bl">v-col</span> <span class="bl2">v-for</span>="(<span class="bl">btn, i</span>) in <span class="bl2">btn_list</span>" :<span class="bl2">key</span>="<span class="bl2">i</span>"</pre>
-            <pre>           <span class="bl2">class</span>=<span class="or">"text-center"</span> <span class="bl2">clos</span>=<span class="or">"12"</span> <span class="bl2">md</span>=<span class="or">"6"</span></pre>
-            <pre>           <span class="bl2">style</span>="<span class="bl2">margin</span>: <input v-model="margin_input" type="number" pattern="\d*" min="0" max="12" :style="input_style_obj">"</pre>
-            <pre>     &gt;</pre>
-            <pre>           &lt;<span class="bl">v-btn</span> <span class="bl2">block outlined class</span>=<span class="or">"ma-2"</span></pre>
-            <pre>               <span class="bl2">:color</span>=<span class="or">"btn.color"</span></pre>
-            <pre>           &gt;</pre>
-            <pre>               {{ <span class="bl2">btn.text</span> }}</pre>
-            <pre>           &lt;<span class="bl">v-btn</span>&gt;</pre>
-            <pre>     &lt;/<span class="bl">v-col</span>&gt;</pre>
+            <pre>    &lt;<span class="bl">v-col</span> <span class="bl2">v-for</span>="(<span class="bl">btn, i</span>) in <span class="bl2">btn_list</span>" :<span class="bl2">key</span>="<span class="bl2">i</span>"</pre>
+            <pre>         <span class="bl2">class</span>=<span class="or">"text-center"</span> <span class="bl2">clos</span>=<span class="or">"12"</span> <span class="bl2">md</span>=<span class="or">"6"</span></pre>
+            <pre>         <span class="bl2">style</span>="<span class="bl2">margin</span>: <input v-model="margin_input" type="number" pattern="\d*" min="0" max="12" :style="input_style_obj">"</pre>
+            <pre>    &gt;</pre>
+            <pre>         &lt;<span class="bl">v-btn</span> <span class="bl2">block outlined class</span>=<span class="or">"ma-2"</span></pre>
+            <pre>             <span class="bl2">:color</span>=<span class="or">"btn.color"</span></pre>
+            <pre>         &gt;</pre>
+            <pre>             {{ <span class="bl2">btn.text</span> }}</pre>
+            <pre>         &lt;<span class="bl">v-btn</span>&gt;</pre>
+            <pre>    &lt;/<span class="bl">v-col</span>&gt;</pre>
             <pre>&lt;/<span class="bl">v-row</span>&gt;</pre>
             <pre><br>&lt;<span class="bl">script</span>&gt;</pre>
             <pre>data() {</pre>
             <pre>   return {</pre>
             <pre>       btn_list: [</pre>
-            <pre :style="btn_style_obj">{text: '<input size="11" v-model="btn_list[0].text" :style="input_style_obj">' color: 'indigo', scrollTo: <v-select class="d-inline-flex" height="45px" hide-details="true" v-model="btn_list[0].scrollTo" :items="toList" style="width:70px; font-size:12px" dense></v-select>},</pre>
-            <pre :style="btn_style_obj">{text: '<input size="11" v-model="btn_list[1].text" :style="input_style_obj">' color: 'indigo', scrollTo: <v-select class="d-inline-flex" height="31px" hide-details="true" v-model="btn_list[1].scrollTo" :items="toList" style="width:70px; font-size:12px" dense></v-select>},</pre>
-            <pre :style="btn_style_obj">{text: '<input size="11" v-model="btn_list[2].text" :style="input_style_obj">' color: 'indigo', scrollTo: <v-select class="d-inline-flex" height="36px" hide-details="true" v-model="btn_list[2].scrollTo" :items="toList" style="width:70px; font-size:12px" dense></v-select>},</pre>
-            <pre :style="btn_style_obj">{text: '<input size="11" v-model="btn_list[3].text" :style="input_style_obj">' color: 'indigo', scrollTo: <v-select class="d-inline-flex" height="32px" hide-details="true" v-model="btn_list[3].scrollTo" :items="toList" style="width:70px; font-size:12px" dense></v-select>},</pre>
+            <pre :style="btn_style_obj">{text:'<input size="10" v-model="btn_list[0].text" :style="input_style_obj">' color:'indigo', scrollTo:<v-select class="d-inline-flex" height="30px" hide-details="true" v-model="btn_list[0].scrollTo" :items="toList" style="width:60px; font-size:11px" dense></v-select>},</pre>
+            <pre :style="btn_style_obj">{text:'<input size="10" v-model="btn_list[1].text" :style="input_style_obj">' color:'indigo', scrollTo:<v-select class="d-inline-flex" height="31px" hide-details="true" v-model="btn_list[1].scrollTo" :items="toList" style="width:60px; font-size:11px" dense></v-select>},</pre>
+            <pre :style="btn_style_obj">{text:'<input size="10" v-model="btn_list[2].text" :style="input_style_obj">' color:'indigo', scrollTo:<v-select class="d-inline-flex" height="36px" hide-details="true" v-model="btn_list[2].scrollTo" :items="toList" style="width:60px; font-size:11px" dense></v-select>},</pre>
+            <pre :style="btn_style_obj">{text:'<input size="10" v-model="btn_list[3].text" :style="input_style_obj">' color:'indigo', scrollTo:<v-select class="d-inline-flex" height="32px" hide-details="true" v-model="btn_list[3].scrollTo" :items="toList" style="width:60px; font-size:11px" dense></v-select>},</pre>
             <pre>       ]</pre>
             <pre>   }</pre>
             <pre>}</pre>
@@ -74,30 +74,29 @@ var typed_str =
 `
 <h1 style="color: navy ">Hello : )  </h1>
 <v-row justify="center" class="btn_list">
-     <v-col v-for="(btn, i) in btn_list" :key="i"
-           class="text-center" clos="12" md="6"
-           style="margin: 0 "
-     >
-           <v-btn block outlined class="ma-2"
-               :color="btn.color"
-           >
-               {{ btn.text }}
-           <v-btn>
-     </v-col>
+    <v-col v-for="(btn, i) in btn_list" :key="i"
+         class="text-center" clos="12" md="6"
+         style="margin: 0 "
+    >
+         <v-btn block outlined class="ma-2"
+             :color="btn.color"
+         >
+             {{ btn.text }}
+         <v-btn>
+    </v-col>
 </v-row>
 
 <script>
 data() {
    return {
        btn_list: [
+{text:'VIEW MY HO' color:'indigo', scrollTo: 'home'},
 
-{text: 'VIEW MY HOM' color: 'indigo', scrollTo: 'home'},
+{text:'VIEW MY AB' color:'indigo', scrollTo: 'about'},
 
-{text: 'VIEW MY ABO' color: 'indigo', scrollTo: 'about'},
+{text:'VIEW MY WO' color:'indigo', scrollTo: 'works'},
 
-{text: 'VIEW MY WOR' color: 'indigo', scrollTo: 'works'},
-
-{text: 'VIEW MY HIS' color: 'indigo', scrollTo: 'history'},
+{text:'VIEW MY HI' color:'indigo', scrollTo: 'history'},
        ]
    }
 }
@@ -146,7 +145,7 @@ export default {
     },
     endCodeShow() {
         this.input_style_obj.border = '3px solid #6666ff'
-        this.btn_style_obj.fontSize = '12px' // スマホだと横幅をオーバーしてしまうため
+        this.btn_style_obj.fontSize = '11px' // スマホだと横幅をオーバーしてしまうため
     },
     resetCss() {
       this.title = default_title
@@ -164,7 +163,7 @@ export default {
   mounted() {
     var dom = this.$refs.home
     var rect = dom.getBoundingClientRect()
-    this.windowHeight = window.innerHeight > rect.height ? window.innerHeight : rect.height
+    this.windowHeight = window.innerHeight > rect.height ? window.innerHeight : rect.height + 50
   }
 }
 </script>

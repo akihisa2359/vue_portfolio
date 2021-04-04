@@ -35,10 +35,12 @@
       light
     >
       <v-app-bar-nav-icon class='hidden-md-and-up' @click="draw"></v-app-bar-nav-icon>
-      <v-toolbar-title>Vuetify</v-toolbar-title>
+      <v-toolbar-title class='hidden-sm-and-down'>
+        <v-btn :icon="true" v-scroll-to="{ element: '#home', duration: scroll_dur }"><v-icon>mdi-home</v-icon></v-btn>
+      </v-toolbar-title>
       <v-spacer></v-spacer>
       <v-toolbar-items class='hidden-sm-and-down'>
-        <v-btn v-scroll-to="{ element: '#home', duration: scroll_dur }">HOME</v-btn>
+        <v-btn text v-scroll-to="{ element: '#home', duration: scroll_dur }">HOME</v-btn>
         <v-btn text v-scroll-to="{ element: '#about', duration: scroll_dur }">ABOUT</v-btn>
         <v-btn text v-scroll-to="{ element: '#works', duration: scroll_dur }">WORKS</v-btn>
         <v-btn text v-scroll-to="{ element: '#history', duration: scroll_dur }">HISTORY</v-btn>
@@ -46,17 +48,11 @@
     </v-app-bar>
     
     <v-main class="main-screen">
-      <!-- <v-container> -->
-        <!-- <router-view /> -->
-        <!-- <div class="field" @click="moveIcon">
-          <MoveIcon ref="icon1" />
-        </div> -->
         <Home id="home" />
         <About id="about" />
         <Works id="works" />
         <History id="history" />
-        <!-- <FreeField /> -->
-      <!-- </v-container> -->
+        <Bottom />
     </v-main>
 
     <v-footer
@@ -65,8 +61,11 @@
       app
       inset
       absolute
+      class="text-caption"
     >
-      Vuetify
+      <div id="footer">
+        &copy; 2021 akihisa makimoto
+      </div>
     </v-footer>
   </v-app>
 </template>
@@ -77,30 +76,25 @@ import Home from './views/Home'
 import About from './views/About'
 import Works from './views/Works'
 import History from './views/History'
+import Bottom from './views/Bottom'
 
-// import MoveIcon from './components/MoveIcon'
-// import FreeField from './components/FreeField'
 export default {
   components: {
     About,
     Home,
     Works,
-    History
-  //   MoveIcon,
-  //   FreeField
+    History,
+    Bottom
   },
 
   data() {
     return {
       drawer: false,
-      items: [
-        'a', 'b', 'c', 'd', 'e'
-      ],
       nav_list: [
-        {name: 'HOME',icon: 'mdi-vuetify', link: '/', scrollTo: '#home'},
-        {name: 'ABOUT',icon: 'mdi-cogs', link: '/about', scrollTo: '#about'},
-        {name: 'WORKS',icon: 'mdi-palette', link: '/works', scrollTo: '#works'},
-        {name: 'HISTORY',icon: 'mdi-view-dashboard', link: '/history', scrollTo: '#history'},
+        {name: 'HOME',icon: 'mdi-view-dashboard', link: '/', scrollTo: '#home'},
+        {name: 'ABOUT',icon: 'mdi-account', link: '/about', scrollTo: '#about'},
+        {name: 'WORKS',icon: 'mdi-code-tags', link: '/works', scrollTo: '#works'},
+        {name: 'HISTORY',icon: 'mdi-history', link: '/history', scrollTo: '#history'},
       ],
       scroll_dur: 1000,
     }
@@ -119,16 +113,11 @@ export default {
 </script>
 
 <style scoped>
-.field {
-  position: relative;
-  width: 100%;
-  height: 550px;
-  border: 1px solid #aaa;
-  background-color: #f5f5f5;
-  overflow: hidden;
+.main-screen {
+  background-color: #f9f9f9
 }
 
-.main-screen {
-  background-color: #fbfbfb
+#footer {
+  margin: auto;
 }
 </style>

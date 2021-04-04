@@ -4,10 +4,14 @@
 
     <div class="text-center"> 
       <h1>about me</h1>
-      <p> 大阪出身</p>
-      <p>あいうえお</p>
+      <p> Birthyear ： 1995</p>
+      <p> From ： Osaka</p>
+      <p> Living ： Tokyo</p>
+      <p> Sport ： Basketball</p>
+      <p> Likes ： Games, Manzai
+      <p> note ： <a blank href="https://note.com/maki_note_" target="_blank" rel="noopener">https://note.com/maki_note_</a></p>
+      <p> GitHub ： <a blank href="https://note.com/maki_note_" target="_blank" rel="noopener">https://github.com/akihisa2359</a></p>
     </div>
-    <!-- <div style="height: 500px"></div> -->
     </v-parallax>
   </div>
 </template>

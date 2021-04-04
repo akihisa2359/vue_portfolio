@@ -1,10 +1,10 @@
 <template>
-    <v-container class="home" 
+    <v-container class="home" ref="home"
       :style="{
         height: this.windowHeight+'px',
         width: this.$vuetify.breakpoint.smAndDown ? '100%' : '50%'
       }"
-      mt-3 mt-md-10
+      mt-2 mt-md-10
     >
       <transition name="code-show" v-on:after-enter="endCodeShow">
         <p v-if="type_completed" class="absolute back-code">
@@ -12,7 +12,7 @@
             <pre>&lt;<span class="bl">v-row</span> <span class="bl2">justify</span>=<span class="or">"center"</span> <span class="bl2">class</span>=<span class="or">"btn_list"</span>&gt;</pre>
             <pre>     &lt;<span class="bl">v-col</span> <span class="bl2">v-for</span>="(<span class="bl">btn, i</span>) in <span class="bl2">btn_list</span>" :<span class="bl2">key</span>="<span class="bl2">i</span>"</pre>
             <pre>           <span class="bl2">class</span>=<span class="or">"text-center"</span> <span class="bl2">clos</span>=<span class="or">"12"</span> <span class="bl2">md</span>=<span class="or">"6"</span></pre>
-            <pre>           <span class="bl2">style</span>="<span class="bl2">margin</span>: <input v-model="margin_input" type="number" min="0" max="12" :style="input_style_obj">"</pre>
+            <pre>           <span class="bl2">style</span>="<span class="bl2">margin</span>: <input v-model="margin_input" type="number" pattern="\d*" min="0" max="12" :style="input_style_obj">"</pre>
             <pre>     &gt;</pre>
             <pre>           &lt;<span class="bl">v-btn</span> <span class="bl2">block outlined class</span>=<span class="or">"ma-2"</span></pre>
             <pre>               <span class="bl2">:color</span>=<span class="or">"btn.color"</span></pre>
@@ -38,7 +38,7 @@
           <pre class="typing"></pre>
       </vue-typed-js>
 
-      <v-row justify="center" class="my-16">
+      <v-row justify="center" class="mt-14 mb-5 mb-md-10">
           <transition name="slide-fade">
               <h1 v-show="type_completed" class="text-h2 font-weight-bold" :style="{color: title_color}">{{title}}</h1>
           </transition>
@@ -55,7 +55,7 @@
                     {{ btn.text }}
                   </v-btn>
             </v-col>
-            <v-col cols="12" md="8" class="mt-6">
+            <v-col cols="12" md="8" class="mt-6 mt-md-15">
               <v-btn rounded color="info" dark block @click="resetCss">reset css</v-btn>
             </v-col>
         </v-row>
@@ -93,7 +93,7 @@ data() {
 
 {text: 'VIEW MY HISTORY' color: 'indigo', scrollTo: 'history'},
 `
-typed_str = 'a'
+// typed_str = 'a'
 var default_title = 'Hello : )'
 var default_title_color = 'navy'
 var default_margin_input = '0'
@@ -114,7 +114,6 @@ export default {
       input_style_obj: {
         transition: '2s',
         border: 0,
-        // borderColor: 'black',
         opacity: 0.8
       },
       typed_strings: [typed_str, ''],
@@ -128,14 +127,10 @@ export default {
   },
 
   methods: {
-    moveIcon(e) {
-      this.$refs.icon1.moveTo(e.offsetX, e.offsetY)
-    },
     typeComplete() {
       this.type_completed = true
     },
     endCodeShow() {
-        console.log(this.input_style_obj.border)
         this.input_style_obj.border = '3px solid #6666ff'
     },
     resetCss() {
@@ -152,7 +147,9 @@ export default {
   },
 
   mounted() {
-    this.windowHeight = window.innerHeight
+    var dom = this.$refs.home
+    var rect = dom.getBoundingClientRect()
+    this.windowHeight = window.innerHeight > rect.height ? window.innerHeight : rect.height
   }
 }
 </script>
@@ -180,11 +177,6 @@ export default {
     opacity: 0.4;
   }
 }
-
-/* .input {
-    transition: all 1s ease;
-    border: 5px solid blue;
-} */
 
 .home {
   position: relative;

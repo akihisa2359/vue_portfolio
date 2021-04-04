@@ -1,5 +1,5 @@
 <template>
-  <v-container class="py-15">
+  <v-container class="py-15" ref="works" :style="{height: windowHeight + 'px'}">
     <h1 class= "text-center mt-0 py-15">Works</h1>
     
       <!-- work1 -->
@@ -138,7 +138,9 @@ export default {
 
     },
     mounted() {
-      this.windowHeight = window.innerHeight
+      var dom = this.$refs.works
+      var rect = dom.getBoundingClientRect()
+      this.windowHeight = window.innerHeight > rect.height ? window.innerHeight : rect.height
     }
 }
 </script>

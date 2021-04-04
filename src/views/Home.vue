@@ -25,10 +25,14 @@
             <pre>data() {</pre>
             <pre>   return {</pre>
             <pre>       btn_list: [</pre>
-            <pre class="text-caption">{text: <input size="12" v-model="btn_list[0].text" :style="input_style_obj"> color: 'indigo', scrollTo: <v-select class="d-inline-flex" v-model="btn_list[0].scrollTo" :items="toList" style="width:80px" dense></v-select>},</pre>
-            <pre class="text-caption">{text: <input size="12" v-model="btn_list[1].text" :style="input_style_obj"> color: 'indigo', scrollTo: <v-select class="d-inline-flex" v-model="btn_list[1].scrollTo" :items="toList" style="width:80px" dense></v-select>},</pre>
-            <pre class="text-caption">{text: <input size="12" v-model="btn_list[2].text" :style="input_style_obj"> color: 'indigo', scrollTo: <v-select class="d-inline-flex" v-model="btn_list[2].scrollTo" :items="toList" style="width:80px" dense></v-select>},</pre>
-            <pre class="text-caption">{text: <input size="12" v-model="btn_list[3].text" :style="input_style_obj"> color: 'indigo', scrollTo: <v-select class="d-inline-flex" v-model="btn_list[3].scrollTo" :items="toList" style="width:80px" dense></v-select>},</pre>
+            <pre class="text-captiona">{text: '<input size="11" v-model="btn_list[0].text" :style="input_style_obj">' color: 'indigo', scrollTo: <v-select class="d-inline-flex" height="36px" hide-details="true" v-model="btn_list[0].scrollTo" :items="toList" style="width:80px" dense></v-select>},</pre>
+            <pre class="text-captioan">{text: '<input size="11" v-model="btn_list[1].text" :style="input_style_obj">' color: 'indigo', scrollTo: <v-select class="d-inline-flex" height="36px" hide-details="true" v-model="btn_list[1].scrollTo" :items="toList" style="width:80px" dense></v-select>},</pre>
+            <pre class="text-captiona">{text: '<input size="11" v-model="btn_list[2].text" :style="input_style_obj">' color: 'indigo', scrollTo: <v-select class="d-inline-flex" height="36px" hide-details="true" v-model="btn_list[2].scrollTo" :items="toList" style="width:80px" dense></v-select>},</pre>
+            <pre class="text-captiona">{text: '<input size="11" v-model="btn_list[3].text" :style="input_style_obj">' color: 'indigo', scrollTo: <v-select class="d-inline-flex" height="36px" hide-details="true" v-model="btn_list[3].scrollTo" :items="toList" style="width:80px" dense></v-select>},</pre>
+            <pre>       ]</pre>
+            <pre>   }</pre>
+            <pre>}</pre>
+            <pre>&lt;<span class="bl">/script</span>&gt;</pre>
         </p>
       </transition>
 
@@ -66,7 +70,7 @@
 <script>
 var typed_str = 
 `
-<h1 style="color: navy">Hello : )</h1>
+<h1 style="color: navy ">Hello : )  </h1>
 <v-row justify="center" class="btn_list">
      <v-col v-for="(btn, i) in btn_list" :key="i"
            class="text-center" clos="12" md="6"
@@ -92,6 +96,10 @@ data() {
 {text: 'VIEW MY WORKS' color: 'indigo', scrollTo: 'works'},
 
 {text: 'VIEW MY HISTORY' color: 'indigo', scrollTo: 'history'},
+       ]
+   }
+}
+<script> 
 `
 // typed_str = 'a'
 var default_title = 'Hello : )'

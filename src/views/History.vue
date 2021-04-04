@@ -1,9 +1,9 @@
 <template>
     <div class="history">
-         <v-parallax dark height="1500" src="../assets/autumn-studio-PaM7SD5wM6g-unsplash.jpg">
+        <v-parallax dark height="1600" src="../assets/autumn-studio-PaM7SD5wM6g-unsplash.jpg">
         <!-- スマホの文字の表示スペースを確保するためにpl-0 -->
          <v-container class="pl-0">
-            <h1 class= "text-center mt-0 pt-4">History</h1>
+            <h1 class= "text-center mt-0 pt-4">history</h1>
             <v-timeline align-top :dense="$vuetify.breakpoint.smAndDown">
                 <v-timeline-item v-for="(item, i) in items" :key="i"
                     :color="item.color"
@@ -12,7 +12,7 @@
                 >
                     <v-lazy
                         :options="{
-                        threshold: .5
+                        threshold: .7
                         }"
                         min-height="200"
                         transition="fade-transition"

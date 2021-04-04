@@ -25,14 +25,16 @@
             <pre>data() {</pre>
             <pre>   return {</pre>
             <pre>       btn_list: [</pre>
-            <pre class="text-captiona">{text: '<input size="11" v-model="btn_list[0].text" :style="input_style_obj">' color: 'indigo', scrollTo: <v-select class="d-inline-flex" height="36px" hide-details="true" v-model="btn_list[0].scrollTo" :items="toList" style="width:80px" dense></v-select>},</pre>
-            <pre class="text-captioan">{text: '<input size="11" v-model="btn_list[1].text" :style="input_style_obj">' color: 'indigo', scrollTo: <v-select class="d-inline-flex" height="36px" hide-details="true" v-model="btn_list[1].scrollTo" :items="toList" style="width:80px" dense></v-select>},</pre>
-            <pre class="text-captiona">{text: '<input size="11" v-model="btn_list[2].text" :style="input_style_obj">' color: 'indigo', scrollTo: <v-select class="d-inline-flex" height="36px" hide-details="true" v-model="btn_list[2].scrollTo" :items="toList" style="width:80px" dense></v-select>},</pre>
-            <pre class="text-captiona">{text: '<input size="11" v-model="btn_list[3].text" :style="input_style_obj">' color: 'indigo', scrollTo: <v-select class="d-inline-flex" height="36px" hide-details="true" v-model="btn_list[3].scrollTo" :items="toList" style="width:80px" dense></v-select>},</pre>
+            <pre :style="btn_style_obj">{text: '<input size="11" v-model="btn_list[0].text" :style="input_style_obj">' color: 'indigo', scrollTo: <v-select class="d-inline-flex" height="45px" hide-details="true" v-model="btn_list[0].scrollTo" :items="toList" style="width:70px; font-size:12px" dense></v-select>},</pre>
+            <pre :style="btn_style_obj">{text: '<input size="11" v-model="btn_list[1].text" :style="input_style_obj">' color: 'indigo', scrollTo: <v-select class="d-inline-flex" height="31px" hide-details="true" v-model="btn_list[1].scrollTo" :items="toList" style="width:70px; font-size:12px" dense></v-select>},</pre>
+            <pre :style="btn_style_obj">{text: '<input size="11" v-model="btn_list[2].text" :style="input_style_obj">' color: 'indigo', scrollTo: <v-select class="d-inline-flex" height="36px" hide-details="true" v-model="btn_list[2].scrollTo" :items="toList" style="width:70px; font-size:12px" dense></v-select>},</pre>
+            <pre :style="btn_style_obj">{text: '<input size="11" v-model="btn_list[3].text" :style="input_style_obj">' color: 'indigo', scrollTo: <v-select class="d-inline-flex" height="32px" hide-details="true" v-model="btn_list[3].scrollTo" :items="toList" style="width:70px; font-size:12px" dense></v-select>},</pre>
             <pre>       ]</pre>
             <pre>   }</pre>
             <pre>}</pre>
             <pre>&lt;<span class="bl">/script</span>&gt;</pre>
+            <pre><br></pre>
+            <pre></pre>
         </p>
       </transition>
 
@@ -42,7 +44,7 @@
           <pre class="typing"></pre>
       </vue-typed-js>
 
-      <v-row justify="center" class="mt-14 mb-5 mb-md-10">
+      <v-row justify="center" class="mt-15 mb-5 mb-md-10">
           <transition name="slide-fade">
               <h1 v-show="type_completed" class="text-h2 font-weight-bold" :style="{color: title_color}">{{title}}</h1>
           </transition>
@@ -60,7 +62,7 @@
                   </v-btn>
             </v-col>
             <v-col cols="12" md="8" class="mt-6 mt-md-15">
-              <v-btn rounded color="info" dark block @click="resetCss">reset css</v-btn>
+              <v-btn rounded color="indigo" dark block @click="resetCss">reset css</v-btn>
             </v-col>
         </v-row>
       </transition>
@@ -89,13 +91,13 @@ data() {
    return {
        btn_list: [
 
-{text: 'VIEW MY HOME' color: 'indigo', scrollTo: 'home'},
+{text: 'VIEW MY HOM' color: 'indigo', scrollTo: 'home'},
 
-{text: 'VIEW MY ABOUTME' color: 'indigo', scrollTo: 'about'},
+{text: 'VIEW MY ABO' color: 'indigo', scrollTo: 'about'},
 
-{text: 'VIEW MY WORKS' color: 'indigo', scrollTo: 'works'},
+{text: 'VIEW MY WOR' color: 'indigo', scrollTo: 'works'},
 
-{text: 'VIEW MY HISTORY' color: 'indigo', scrollTo: 'history'},
+{text: 'VIEW MY HIS' color: 'indigo', scrollTo: 'history'},
        ]
    }
 }
@@ -124,6 +126,10 @@ export default {
         border: 0,
         opacity: 0.8
       },
+      btn_style_obj: {
+        transition: '1',
+        fontSize: '13px',
+      },
       typed_strings: [typed_str, ''],
       btn_list: [
         {text: default_btn_texts[0], color: 'indigo', scrollTo: default_scroll_tos[0]},
@@ -140,6 +146,7 @@ export default {
     },
     endCodeShow() {
         this.input_style_obj.border = '3px solid #6666ff'
+        this.btn_style_obj.fontSize = '12px' // スマホだと横幅をオーバーしてしまうため
     },
     resetCss() {
       this.title = default_title
@@ -183,6 +190,20 @@ export default {
   }
   100% {
     opacity: 0.4;
+  }
+}
+
+.btn_setting {
+  transition: 2s;
+  /* transform: scale(0.6); */
+  animation: small 2s ease forwards;
+}
+@keyframes small {
+  0% {
+    font-size: 13px;
+  }
+  100% {
+    font-size: px;
   }
 }
 

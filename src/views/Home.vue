@@ -10,7 +10,7 @@
         <p v-if="type_completed" class="absolute back-code">
             <pre>&lt;<span class="bl">h1</span> <span class="bl2">style</span>="<span class="bl2">color</span>: <input size="4" v-model="title_color" :style="input_style_obj">"&gt;<input size="7" v-model="title" :style="input_style_obj">&lt;<span class="bl">/h1</span>&gt;</pre>
             <pre>&lt;<span class="bl">v-row</span> <span class="bl2">justify</span>=<span class="or">"center"</span> <span class="bl2">class</span>=<span class="or">"btn_list"</span>&gt;</pre>
-            <pre>    &lt;<span class="bl">v-col</span> <span class="bl2">v-for</span>="(<span class="bl">btn, i</span>) in <span class="bl2">btn_list</span>" :<span class="bl2">key</span>="<span class="bl2">i</span>"</pre>
+            <pre>    &lt;<span class="bl">v-col</span> <span class="bl2">v-for</span>="(<span class="bl">btn, i</span>) in <span class="bl2">btn_list</span>"</pre>
             <pre>         <span class="bl2">class</span>=<span class="or">"text-center"</span> <span class="bl2">clos</span>=<span class="or">"12"</span> <span class="bl2">md</span>=<span class="or">"6"</span></pre>
             <pre>         <span class="bl2">style</span>="<span class="bl2">margin</span>: <input v-model="margin_input" type="number" pattern="\d*" min="0" max="12" :style="input_style_obj">"</pre>
             <pre>    &gt;</pre>
@@ -25,10 +25,10 @@
             <pre>data() {</pre>
             <pre>   return {</pre>
             <pre class="mb-2">       btn_list: [</pre>
-            <pre :style="btn_style_obj">{text:'<input size="10" v-model="btn_list[0].text" :style="input_style_obj">' color:'indigo', scrollTo:<v-select class="d-inline-flex" height="34px" hide-details="true" v-model="btn_list[0].scrollTo" :items="toList" style="width:67px; font-size:10px" dense></v-select>},</pre>
-            <pre :style="btn_style_obj">{text:'<input size="10" v-model="btn_list[1].text" :style="input_style_obj">' color:'indigo', scrollTo:<v-select class="d-inline-flex" height="34px" hide-details="true" v-model="btn_list[1].scrollTo" :items="toList" style="width:67px; font-size:10px" dense></v-select>},</pre>
-            <pre :style="btn_style_obj">{text:'<input size="10" v-model="btn_list[2].text" :style="input_style_obj">' color:'indigo', scrollTo:<v-select class="d-inline-flex" height="34px" hide-details="true" v-model="btn_list[2].scrollTo" :items="toList" style="width:67px; font-size:10px" dense></v-select>},</pre>
-            <pre :style="btn_style_obj">{text:'<input size="10" v-model="btn_list[3].text" :style="input_style_obj">' color:'indigo', scrollTo:<v-select class="d-inline-flex" height="34px" hide-details="true" v-model="btn_list[3].scrollTo" :items="toList" style="width:67px; font-size:10px" dense></v-select>},</pre>
+            <pre :style="btn_style_obj">{text:'<input size="10" v-model="btn_list[0].text" :style="[input_style_obj,btn_style_obj]">' color:'blue', scrollTo:<v-select class="d-inline-flex" height="34px" hide-details="true" v-model="btn_list[0].scrollTo" :items="toList" :style="btn_style_obj" style="width:70px" dense></v-select>},</pre>
+            <pre :style="btn_style_obj">{text:'<input size="10" v-model="btn_list[1].text" :style="[input_style_obj,btn_style_obj]">' color:'blue', scrollTo:<v-select class="d-inline-flex" height="34px" hide-details="true" v-model="btn_list[1].scrollTo" :items="toList" :style="btn_style_obj" style="width:70px" dense></v-select>},</pre>
+            <pre :style="btn_style_obj">{text:'<input size="10" v-model="btn_list[2].text" :style="[input_style_obj,btn_style_obj]">' color:'blue', scrollTo:<v-select class="d-inline-flex" height="34px" hide-details="true" v-model="btn_list[2].scrollTo" :items="toList" :style="btn_style_obj" style="width:70px" dense></v-select>},</pre>
+            <pre :style="btn_style_obj">{text:'<input size="10" v-model="btn_list[3].text" :style="[input_style_obj,btn_style_obj]">' color:'blue', scrollTo:<v-select class="d-inline-flex" height="34px" hide-details="true" v-model="btn_list[3].scrollTo" :items="toList" :style="btn_style_obj" style="width:70px" dense></v-select>},</pre>
             <pre class="mt-3">       ]</pre>
             <pre>   }</pre>
             <pre>}</pre>
@@ -74,7 +74,7 @@ var typed_str =
 `
 <h1 style="color: navy ">Hello : )  </h1>
 <v-row justify="center" class="btn_list">
-    <v-col v-for="(btn, i) in btn_list" :key="i"
+    <v-col v-for="(btn, i) in btn_list"
          class="text-center" clos="12" md="6"
          style="margin: 0 "
     >
@@ -128,7 +128,7 @@ export default {
         opacity: 0.8
       },
       btn_style_obj: {
-        transition: '1',
+        transition: '2s',
         fontSize: '13px',
       },
       typed_strings: [typed_str, ''],

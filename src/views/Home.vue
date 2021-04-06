@@ -24,12 +24,12 @@
             <pre><br>&lt;<span class="bl">script</span>&gt;</pre>
             <pre>data() {</pre>
             <pre>   return {</pre>
-            <pre>       btn_list: [</pre>
-            <pre :style="btn_style_obj">{text:'<input size="10" v-model="btn_list[0].text" :style="input_style_obj">' color:'indigo', scrollTo:<v-select class="d-inline-flex" height="30px" hide-details="true" v-model="btn_list[0].scrollTo" :items="toList" style="width:60px; font-size:11px" dense></v-select>},</pre>
-            <pre :style="btn_style_obj">{text:'<input size="10" v-model="btn_list[1].text" :style="input_style_obj">' color:'indigo', scrollTo:<v-select class="d-inline-flex" height="31px" hide-details="true" v-model="btn_list[1].scrollTo" :items="toList" style="width:60px; font-size:11px" dense></v-select>},</pre>
-            <pre :style="btn_style_obj">{text:'<input size="10" v-model="btn_list[2].text" :style="input_style_obj">' color:'indigo', scrollTo:<v-select class="d-inline-flex" height="36px" hide-details="true" v-model="btn_list[2].scrollTo" :items="toList" style="width:60px; font-size:11px" dense></v-select>},</pre>
-            <pre :style="btn_style_obj">{text:'<input size="10" v-model="btn_list[3].text" :style="input_style_obj">' color:'indigo', scrollTo:<v-select class="d-inline-flex" height="32px" hide-details="true" v-model="btn_list[3].scrollTo" :items="toList" style="width:60px; font-size:11px" dense></v-select>},</pre>
-            <pre>       ]</pre>
+            <pre class="mb-2">       btn_list: [</pre>
+            <pre :style="btn_style_obj">{text:'<input size="10" v-model="btn_list[0].text" :style="input_style_obj">' color:'indigo', scrollTo:<v-select class="d-inline-flex" height="34px" hide-details="true" v-model="btn_list[0].scrollTo" :items="toList" style="width:67px; font-size:10px" dense></v-select>},</pre>
+            <pre :style="btn_style_obj">{text:'<input size="10" v-model="btn_list[1].text" :style="input_style_obj">' color:'indigo', scrollTo:<v-select class="d-inline-flex" height="34px" hide-details="true" v-model="btn_list[1].scrollTo" :items="toList" style="width:67px; font-size:10px" dense></v-select>},</pre>
+            <pre :style="btn_style_obj">{text:'<input size="10" v-model="btn_list[2].text" :style="input_style_obj">' color:'indigo', scrollTo:<v-select class="d-inline-flex" height="34px" hide-details="true" v-model="btn_list[2].scrollTo" :items="toList" style="width:67px; font-size:10px" dense></v-select>},</pre>
+            <pre :style="btn_style_obj">{text:'<input size="10" v-model="btn_list[3].text" :style="input_style_obj">' color:'indigo', scrollTo:<v-select class="d-inline-flex" height="34px" hide-details="true" v-model="btn_list[3].scrollTo" :items="toList" style="width:67px; font-size:10px" dense></v-select>},</pre>
+            <pre class="mt-3">       ]</pre>
             <pre>   }</pre>
             <pre>}</pre>
             <pre>&lt;<span class="bl">/script</span>&gt;</pre>
@@ -90,6 +90,7 @@ var typed_str =
 data() {
    return {
        btn_list: [
+
 {text:'VIEW MY HO' color:'indigo', scrollTo: 'home'},
 
 {text:'VIEW MY AB' color:'indigo', scrollTo: 'about'},
@@ -97,6 +98,7 @@ data() {
 {text:'VIEW MY WO' color:'indigo', scrollTo: 'works'},
 
 {text:'VIEW MY HI' color:'indigo', scrollTo: 'history'},
+
        ]
    }
 }
@@ -145,7 +147,7 @@ export default {
     },
     endCodeShow() {
         this.input_style_obj.border = '3px solid #6666ff'
-        this.btn_style_obj.fontSize = '11px' // スマホだと横幅をオーバーしてしまうため
+        this.btn_style_obj.fontSize = '10px' // スマホだと横幅をオーバーしてしまうため
     },
     resetCss() {
       this.title = default_title

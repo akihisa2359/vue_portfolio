@@ -3,6 +3,7 @@ import App from './App.vue'
 import vuetify from './plugins/vuetify';
 import router from './router'
 import VueScrollTo from 'vue-scrollto'
+import './css/style.css'
 
 const VueTypedJs = window['VueTypedJs'].default;
 Vue.use(VueTypedJs)

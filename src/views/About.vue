@@ -4,7 +4,7 @@
 
     <div class="text-center"> 
       <h1>about me</h1>
-      <p> Birthyear ： 1995</p>
+      <p class="pt-10"> Birthyear ： 1995</p>
       <p> From ： Osaka</p>
       <p> Living ： Tokyo</p>
       <p> Sport ： Basketball</p>

@@ -8,7 +8,7 @@
     >
       <transition name="code-show" v-on:after-enter="endCodeShow">
         <p v-if="type_completed" class="absolute back-code">
-            <pre>&lt;<span class="bl">h1</span> <span class="bl2">style</span>="<span class="bl2">color</span>: <input size="4" v-model="title_color" :style="input_style_obj">"&gt;<input size="7" v-model="title" :style="input_style_obj">&lt;<span class="bl">/h1</span>&gt;</pre>
+            <pre>&lt;<span class="bl">h1</span> <span class="bl2">style</span>="<span class="bl2">color</span>: <input size="5" v-model="title_color" :style="input_style_obj">"&gt;<input size="8" v-model="title" :style="input_style_obj">&lt;<span class="bl">/h1</span>&gt;</pre>
             <pre>&lt;<span class="bl">v-row</span> <span class="bl2">justify</span>=<span class="or">"center"</span> <span class="bl2">class</span>=<span class="or">"btn_list"</span>&gt;</pre>
             <pre>    &lt;<span class="bl">v-col</span> <span class="bl2">v-for</span>="(<span class="bl">btn, i</span>) in <span class="bl2">btn_list</span>"</pre>
             <pre>         <span class="bl2">class</span>=<span class="or">"text-center"</span> <span class="bl2">clos</span>=<span class="or">"12"</span> <span class="bl2">md</span>=<span class="or">"6"</span></pre>

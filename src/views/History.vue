@@ -80,7 +80,7 @@ export default {
                     icon: 'mdi-star',
                     title: 'Company 2019-',
                     subtitle: '人材系の会社',
-                    text: '社内SEとして業務系ツールの作成、WEBアプリの開発、期間システムの調整を行う',
+                    text: '社内SEとして業務系ツールの作成、WEBアプリの開発、基幹システムの調整を行う',
                     details: ['初めてのWEB系言語(PHP) 2019', '慣れないgitに大苦戦 2019', 'フロントエンドの勉強開始 2020', 'Pythonに着手 2020', 'Vueに着手 2021']
                 }
             ],

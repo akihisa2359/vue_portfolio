@@ -10,7 +10,7 @@
       <p> Sport ： Basketball</p>
       <p> Likes ： Games, Manzai
       <p> note ： <a blank href="https://note.com/maki_note_" target="_blank" rel="noopener">https://note.com/maki_note_</a></p>
-      <p> GitHub ： <a blank href="https://note.com/maki_note_" target="_blank" rel="noopener">https://github.com/akihisa2359</a></p>
+      <p> GitHub ： <a blank href="https://github.com/akihisa2359" target="_blank" rel="noopener">https://github.com/akihisa2359</a></p>
     </div>
     </v-parallax>
   </div>

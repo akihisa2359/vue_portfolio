@@ -7,7 +7,7 @@
       mt-2 mt-md-10
     >
       <transition name="code-show" v-on:after-enter="endCodeShow">
-        <p v-if="type_completed" class="absolute back-code">
+        <p v-if="show_ready" class="absolute back-code">
             <pre>&lt;<span class="bl">h1</span> <span class="bl2">style</span>="<span class="bl2">color</span>: <input size="5" v-model="title_color" :style="input_style_obj">"&gt;<input size="8" v-model="title" :style="input_style_obj">&lt;<span class="bl">/h1</span>&gt;</pre>
             <pre>&lt;<span class="bl">v-row</span> <span class="bl2">justify</span>=<span class="or">"center"</span> <span class="bl2">class</span>=<span class="or">"btn_list"</span>&gt;</pre>
             <pre>    &lt;<span class="bl">v-col</span> <span class="bl2">v-for</span>="(<span class="bl">btn, i</span>) in <span class="bl2">btn_list</span>"</pre>
@@ -38,20 +38,14 @@
         </p>
       </transition>
 
-      <vue-typed-js v-if="!type_completed"
-          :strings="typed_strings"
-          :type-speed="0" :contentType="'null'" :fadeOutDelay="0" :fadeOut="true" :showCursor="false" @onStringTyped="typeComplete()">
-          <pre class="typing"></pre>
-      </vue-typed-js>
-
       <v-row justify="center" class="mt-15 mb-5 mb-md-10">
           <transition name="slide-fade">
-              <h1 v-show="type_completed" class="text-h2 font-weight-bold" :style="{color: title_color}">{{title}}</h1>
+              <h1 v-show="show_ready" class="text-h2 font-weight-bold" :style="{color: title_color}">{{title}}</h1>
           </transition>
       </v-row>
 
       <transition name="slide-fade">
-        <v-row v-show="type_completed" justify="center" class="btn_list pt-md-15" :style="$vuetify.breakpoint.smAndDown ? 'width:50%' : 'width:100%'">
+        <v-row v-show="show_ready" justify="center" class="btn_list pt-md-15" :style="$vuetify.breakpoint.smAndDown ? 'width:50%' : 'width:100%'">
             <v-col block v-for="(btn, i) in btn_list" :key="i" class="text-center px-0 px-sm-3" :class="'ma-' + margin_input" cols="12" md="6">
                   <v-btn block v-scroll-to="{ element: '#' + btn.scrollTo, duration: 2000 }"
                     class="my-2 mx-0"
@@ -70,48 +64,12 @@
 </template>
 
 <script>
-var typed_str = 
-`
-<h1 style="color: navy ">Hello : )  </h1>
-<v-row justify="center" class="btn_list">
-    <v-col v-for="(btn, i) in btn_list"
-         class="text-center" clos="12" md="6"
-         style="margin: 0 "
-    >
-         <v-btn block outlined class="ma-2"
-             :color="btn.color"
-         >
-             {{ btn.text }}
-         <v-btn>
-    </v-col>
-</v-row>
-
-<script>
-data() {
-   return {
-       btn_list: [
-
-{text:'VIEW MY HO' color:'indigo', scrollTo: 'home'},
-
-{text:'VIEW MY AB' color:'indigo', scrollTo: 'about'},
-
-{text:'VIEW MY WO' color:'indigo', scrollTo: 'works'},
-
-{text:'VIEW MY HI' color:'indigo', scrollTo: 'history'},
-
-       ]
-   }
-}
-<script> 
-`
-// typed_str = 'a'
 var default_title = 'Hello : )'
 var default_title_color = 'navy'
 var default_margin_input = '0'
 var default_btn_texts = ['VIEW MY HOME', 'VIEW MY ABOUTME', 'VIEW MY WORKS', 'VIEW MY HISTORY']
 var default_scroll_tos = ['home', 'about', 'works', 'history']
 
-// typed_str = 'a'
 export default {
   name: 'Home',
   data() {
@@ -121,7 +79,7 @@ export default {
       title_color: default_title_color,
       margin_input: default_margin_input,
       toList: ['home', 'about', 'works', 'history'],
-      type_completed: false,
+      show_ready: false,
       input_style_obj: {
         transition: '2s',
         border: 0,
@@ -131,7 +89,6 @@ export default {
         transition: '2s',
         fontSize: '13px',
       },
-      typed_strings: [typed_str, ''],
       btn_list: [
         {text: default_btn_texts[0], color: 'indigo', scrollTo: default_scroll_tos[0]},
         {text: default_btn_texts[1], color: 'indigo', scrollTo: default_scroll_tos[1]},
@@ -142,12 +99,11 @@ export default {
   },
 
   methods: {
-    typeComplete() {
-      this.type_completed = true
-    },
     endCodeShow() {
         this.input_style_obj.border = '3px solid #6666ff'
-        this.btn_style_obj.fontSize = '10px' // スマホだと横幅をオーバーしてしまうため
+        if (this.$vuetify.breakpoint.smAndDown) {
+          this.btn_style_obj.fontSize = '10px' // スマホだと横幅をオーバーしてしまうため
+        }
     },
     resetCss() {
       this.title = default_title
@@ -166,6 +122,7 @@ export default {
     var dom = this.$refs.home
     var rect = dom.getBoundingClientRect()
     this.windowHeight = window.innerHeight > rect.height ? window.innerHeight : rect.height + 50
+    this.show_ready = true;
   }
 }
 </script>
@@ -183,7 +140,7 @@ export default {
 .back-code {
   transition: 2s;
   position: relative;
-  animation: back_opacity 2s ease forwards;
+  animation: back_opacity 3s ease forwards;
 }
 @keyframes back_opacity {
   0% {
